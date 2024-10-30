@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Proyectos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6B73FF, #000DFF);
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: #E0E0E0;
+        }
+
+        .link-button {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .link-button:hover {
+            background-color: #45A049;
+        }
+
+        .link-button:active {
+            background-color: #388E3C;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #B3B3B3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Mis Proyectos Web</h1>
+    <p>Explora mis diferentes proyectos seleccionando uno de los siguientes enlaces:</p>
+    
+    <!-- Enlaces a los distintos proyectos -->
+    <a href="proyecto1/index.html" class="link-button" target="_blank">Proyecto 1 - Calculadora de Impuestos</a>
+    <a href="proyecto2/index.html" class="link-button" target="_blank">Proyecto 2 - Conversor de Moneda</a>
+
+    <div class="footer">
+        <p>&copy; 2024 Agustín González. Todos los derechos reservados.</p>
+    </div>
+</div>
+
+</body>
+</html>
