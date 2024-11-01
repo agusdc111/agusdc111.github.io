@@ -34,10 +34,6 @@
             transition: transform 0.3s;
         }
 
-        .container:hover {
-            transform: scale(1.02);
-        }
-
         h1 {
             text-align: center;
             color: #2C3E50;
@@ -134,19 +130,19 @@
     <div id="form-final" class="form-section">
         <div class="form-group">
             <label for="importe">Ingrese el valor de la importación en USD:</label>
-            <input type="number" id="importe" placeholder="Ej. 150">
-        </div >
+            <input type="number" id="importe" placeholder="Ej. 150" required>
+        </div>
         <button onclick="calcularImpuesto()">Calcular Impuesto</button>
     </div>
 
-    <div id="form-envio" class="form-section">
+    <div id ="form-envio" class="form-section">
         <div class="form-group">
             <label for="precioProducto"> Ingrese el precio del producto en USD:</label>
-            <input type="number" id="precioProducto" placeholder="Ej. 100">
+            <input type="number" id="precioProducto" placeholder="Ej. 100" required>
         </div>
         <div class="form-group">
             <label for="precioEnvio">Ingrese el precio del envío en USD:</label>
-            <input type="number" id="precioEnvio" placeholder="Ej. 20">
+            <input type="number" id="precioEnvio" placeholder="Ej. 20" required>
         </div>
         <button onclick="calcularPrecioEnvio()">Calcular Impuesto</button>
     </div>
@@ -176,8 +172,9 @@
     function calcularPrecioEnvio() {
         const precioProducto = document.getElementById('precioProducto').value;
         const precioEnvio = document.getElementById('precioEnvio').value;
-        const impuesto = (precioProducto + precioEnvio) * 0.2;
-        const precioFinal = precioProducto + precioEnvio + impuesto;
+        const total = parseFloat(precioProducto) + parseFloat(precioEnvio);
+        const impuesto = total * 0.2;
+        const precioFinal = total + impuesto;
         document.getElementById('result-text').innerHTML = `El impuesto es de $${impuesto.toFixed(2)} y el precio final es de $${precioFinal.toFixed(2)}.`;
         document.getElementById('result').style.display = 'block';
     }
