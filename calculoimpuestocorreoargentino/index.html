@@ -135,7 +135,7 @@
         <div class="form-group">
             <label for="importe">Ingrese el valor de la importación en USD:</label>
             <input type="number" id="importe" placeholder="Ej. 150">
-        </div>
+        </div >
         <button onclick="calcularImpuesto()">Calcular Impuesto</button>
     </div>
 
@@ -157,7 +157,30 @@
 </div>
 
 <script>
-    // Your JavaScript code remains the same
+    let currentMode = 0;
+
+    function chooseMode(mode) {
+        currentMode = mode;
+        document.getElementById('form-final').classList.toggle('active', mode === 1);
+        document.getElementById('form-envio').classList.toggle('active', mode === 2);
+    }
+
+    function calcularImpuesto() {
+        const importe = document.getElementById('importe').value;
+        const impuesto = importe * 0.2;
+        const precioFinal = importe + impuesto;
+        document.getElementById('result-text').innerHTML = `El impuesto es de $${impuesto.toFixed(2)} y el precio final es de $${precioFinal.toFixed(2)}.`;
+        document.getElementById('result').style.display = 'block';
+    }
+
+    function calcularPrecioEnvio() {
+        const precioProducto = document.getElementById('precioProducto').value;
+        const precioEnvio = document.getElementById('precioEnvio').value;
+        const impuesto = (precioProducto + precioEnvio) * 0.2;
+        const precioFinal = precioProducto + precioEnvio + impuesto;
+        document.getElementById('result-text').innerHTML = `El impuesto es de $${impuesto.toFixed(2)} y el precio final es de $${precioFinal.toFixed(2)}.`;
+        document.getElementById('result').style.display = 'block';
+    }
 </script>
 
 </body>
