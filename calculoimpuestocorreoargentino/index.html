@@ -182,7 +182,7 @@
         } else {
             const impuestoUSD = (importe - 50) / 2;
             const impuestoARS = impuestoUSD * compraDolar;
-            const totalARS = impuestoARS + 6900;
+            const totalARS = impuestoARS + 7600;
 
             document.getElementById("result-text").innerHTML = `
                 Precio total: USD ${importe.toFixed(2)}<br>
@@ -190,7 +190,7 @@
                 Impuesto en USD: $${impuestoUSD.toFixed(2)}<br>
                 Impuesto en ARS: $${impuestoARS.toFixed(2)}<br><br>
                 <strong>Total a pagar: ARS $${totalARS.toFixed(2)}</strong><br>
-                <small>Incluye ARS $6900 de tasa de gestión del correo</small>
+                <small>Incluye ARS $7600 de tasa de gestión del correo</small>
             `;
         }
         document.getElementById("result").style.display = "block";
