@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     fetch('products.json')
         .then(response => response.json())
         .then(data => {
@@ -21,6 +21,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     productLabel.textContent = `${product[0]} - $${product[1]}`;
                     productDiv.appendChild(productLabel);
 
+                    const quantityControls = document.createElement('div');
+                    quantityControls.className = 'quantity-controls';
+
+                    const decreaseButton = document.createElement('button');
+                    decreaseButton.textContent = '-';
+                    decreaseButton.addEventListener('click', () => {
+                        if (productInput.value > 0) {
+                            productInput.value--;
+                            updateTotal();
+                        }
+                    });
+
                     const productInput = document.createElement('input');
                     productInput.type = 'number';
                     productInput.min = '0';
@@ -28,7 +40,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     productInput.addEventListener('input', () => {
                         updateTotal();
                     });
-                    productDiv.appendChild(productInput);
+
+                    const increaseButton = document.createElement('button');
+                    increaseButton.textContent = '+';
+                    increaseButton.addEventListener('click', () => {
+                        productInput.value++;
+                        updateTotal();
+                    });
+
+                    quantityControls.appendChild(decreaseButton);
+                    quantityControls.appendChild(productInput);
+                    quantityControls.appendChild(increaseButton);
+                    productDiv.appendChild(quantityControls);
 
                     categoryDiv.appendChild(productDiv);
                 });
