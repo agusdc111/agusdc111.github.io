@@ -15,6 +15,23 @@
             <h2>Total: $<span id="totalAmount">0</span></h2>
         </div>
     </div>
+
+    <!-- Botones fijos en la parte inferior -->
+    <div class="fixed-buttons">
+        <button id="viewTotal">Ver total</button>
+        <button id="resetAll">Reiniciar cantidades</button>
+    </div>
+
+    <!-- Modal para el resumen -->
+    <div id="summaryModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Resumen de productos seleccionados</h3>
+            <ul id="summaryList"></ul>
+            <p><strong>Total: $<span id="modalTotalAmount">0</span></strong></p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -69,6 +69,51 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
                 document.getElementById('totalAmount').textContent = totalAmount;
             }
+
+            // Botón "Ver total"
+            document.getElementById('viewTotal').addEventListener('click', () => {
+                const summaryList = document.getElementById('summaryList');
+                summaryList.innerHTML = '';
+
+                const products = document.querySelectorAll('.product');
+                products.forEach(product => {
+                    const quantity = parseInt(product.querySelector('input').value);
+                    if (quantity > 0) {
+                        const productName = product.querySelector('label').textContent.split(' - ')[0];
+                        const productPrice = parseInt(product.querySelector('label').textContent.split('$')[1]);
+                        const totalProduct = quantity * productPrice;
+
+                        const listItem = document.createElement('li');
+                        listItem.textContent = `${productName} - X${quantity} - Total: $${totalProduct}`;
+                        summaryList.appendChild(listItem);
+                    }
+                });
+
+                document.getElementById('modalTotalAmount').textContent = totalAmount;
+                document.getElementById('summaryModal').style.display = 'flex';
+            });
+
+            // Botón "Reiniciar cantidades"
+            document.getElementById('resetAll').addEventListener('click', () => {
+                const products = document.querySelectorAll('.product input');
+                products.forEach(input => {
+                    input.value = '0';
+                });
+                updateTotal();
+            });
+
+            // Cerrar el modal
+            document.querySelector('.close').addEventListener('click', () => {
+                document.getElementById('summaryModal').style.display = 'none';
+            });
+
+            // Cerrar el modal al hacer clic fuera del contenido
+            window.addEventListener('click', (event) => {
+                const modal = document.getElementById('summaryModal');
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
         })
         .catch(error => console.error('Error al cargar los productos:', error));
 });
