@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Instrucciones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Generador de Instrucciones para Cuentas de Juegos</h1>
+        <form id="formulario">
+            <label for="tipoCuenta">Selecciona el tipo de cuenta:</label>
+            <select id="tipoCuenta">
+                <option value="primaria">Cuenta Primaria</option>
+                <option value="secundaria">Cuenta Secundaria</option>
+            </select>
+
+            <label for="consola">Selecciona la consola:</label>
+            <select id="consola">
+                <option value="ps4">PS4</option>
+                <option value="ps5">PS5</option>
+            </select>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" placeholder="Ingresa el email">
+
+            <label for="password">Contraseña:</label>
+            <input type="text" id="password" placeholder="Ingresa la contraseña">
+
+            <label for="codigoSeguridad">Código de Seguridad:</label>
+            <input type="text" id="codigoSeguridad" placeholder="Ingresa el código de seguridad">
+
+            <button type="button" onclick="generarMensaje()">Generar Mensaje</button>
+        </form>
+
+        <div id="mensajeGenerado" class="mensaje">
+            <!-- Aquí se mostrará el mensaje generado -->
+        </div>
+
+        <button id="botonCopiar" onclick="copiarMensaje()" disabled>Copiar Mensaje</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
