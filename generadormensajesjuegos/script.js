@@ -11,7 +11,7 @@ function generarMensaje() {
         mensaje = `📢 ¡Gracias por tu compra!
 
 🔐 Instrucciones para configurar tu Cuenta Primaria en ${consola.toUpperCase()}:
-1️⃣ En tu ${consola.toUpperCase()}, crea un nuevo usuario y utiliza los datos proporcionados para iniciar sesión.
+1️⃣ En tu ${consola.toUpperCase()}, crea un nuevo usuario y utiliza los datos proporcionados para iniciar sesión. (NO CREAR UN USUARIO DE INVITADO)
 2️⃣ Acepta las políticas de privacidad y configura la cuenta como PRINCIPAL.
 3️⃣ Descarga el juego desde la biblioteca de la cuenta comprada.
 4️⃣ Una vez descargado, sal de la cuenta comprada y cambia al usuario de tu preferencia para jugar.
@@ -19,9 +19,11 @@ function generarMensaje() {
 👨‍💻 Datos de la cuenta
 Por favor, utiliza los siguientes datos para iniciar sesión en la cuenta de juego digital:
 
+------------------------------------------------------------
 Email: ${email}
 Contraseña: ${password}
 Código de seguridad: ${codigoSeguridad}
+------------------------------------------------------------
 
 ✅ Ventajas de la Cuenta Primaria:
 - Juegas desde tu propia cuenta personal.
@@ -51,7 +53,7 @@ Código de seguridad: ${codigoSeguridad}
         mensaje = `📢 ¡Gracias por tu compra!
 
 🔐 Instrucciones para configurar tu Cuenta Secundaria en ${consola.toUpperCase()}:
-1️⃣ En tu ${consola.toUpperCase()}, crea un nuevo usuario y utiliza los datos proporcionados para iniciar sesión.
+1️⃣ En tu ${consola.toUpperCase()}, crea un nuevo usuario y utiliza los datos proporcionados para iniciar sesión. (NO CREAR UN USUARIO DE INVITADO)
 2️⃣ Acepta las políticas de privacidad y NO ACTIVES la cuenta como principal.
 3️⃣ Descarga el juego desde la biblioteca del usuario nuevo creado.
 4️⃣ Cada vez que quieras jugar, inicia sesión en el usuario que creaste con esta cuenta.
@@ -59,9 +61,11 @@ Código de seguridad: ${codigoSeguridad}
 👨‍💻 Datos de la cuenta
 Por favor, utiliza los siguientes datos para iniciar sesión en la cuenta de juego digital:
 
+------------------------------------------------------------
 Email: ${email}
 Contraseña: ${password}
 Código de seguridad: ${codigoSeguridad}
+------------------------------------------------------------
 
 ✅ Ventajas de la Cuenta Secundaria:
 - Juegas desde tu propia cuenta personal.
