@@ -17,7 +17,7 @@ app.get('/productos/products', (req, res) => {
 });
 
 // Actualizar el archivo JSON
-app.post('productos/products', (req, res) => {
+app.post('/productos/products', (req, res) => {
     fs.writeFile('products.json', JSON.stringify(req.body, null, 2), (err) => {
         if (err) return res.status(500).send(err);
         res.sendStatus(200);
