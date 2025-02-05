@@ -9,15 +9,15 @@ app.use(bodyParser.json());
 app.use(express.static('.')); // Servir archivos estáticos
 
 // Leer el archivo JSON
-app.get('/products', (req, res) => {
-    fs.readFile('products.json', 'utf8', (err, data) => {
+app.get('/productos/products', (req, res) => {
+    fs.readFile('productos/products.json', 'utf8', (err, data) => {
         if (err) return res.status(500).send(err);
         res.json(JSON.parse(data));
     });
 });
 
 // Actualizar el archivo JSON
-app.post('/products', (req, res) => {
+app.post('productos/products', (req, res) => {
     fs.writeFile('products.json', JSON.stringify(req.body, null, 2), (err) => {
         if (err) return res.status(500).send(err);
         res.sendStatus(200);
