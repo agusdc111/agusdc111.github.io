@@ -23,16 +23,17 @@ function generarMensaje() {
     let mensaje = '';
 
     if (tipoProducto === 'plus') {
-        mensaje = `🔐 Instrucciones para configurar tu suscripción PS PLUS en ${consola.toUpperCase()}:
-1️⃣ En tu ${consola.toUpperCase()}, mantén apretado el botón PS y ve a ALIMENTACIÓN.
+        if (consola === 'ps4') {
+            mensaje = `🔐 Instrucciones para configurar tu suscripción PS PLUS en PS4:
+1️⃣ En tu PS4, mantén apretado el botón PS y ve a ALIMENTACIÓN.
 2️⃣ Presiona en CAMBIAR USUARIO.
 3️⃣ Ve a la izquierda del todo, crea un nuevo usuario y usa los datos proporcionados para iniciar sesión (NO uses un usuario de invitado).
 4️⃣ Dale a ACEPTAR dos veces seguidas.
-6️⃣ Ve a Configuración > ADMINISTRACIÓN DE CUENTAS.
-7️⃣ Presiona ACTIVAR COMO PRINCIPAL (NO CIERRES SESIÓN).
-8️⃣ Mantén presionado el botón PS, ve a ALIMENTACIÓN y selecciona SALIR DEL PERFIL.
-9️⃣ Verifica en tu cuenta personal que las funciones online de algún juego funcionen.
-🔟 ¡A disfrutar!
+5️⃣ Ve a Configuración > ADMINISTRACIÓN DE CUENTAS.
+6️⃣ Presiona ACTIVAR COMO PRINCIPAL (NO CIERRES SESIÓN).
+7️⃣ Mantén presionado el botón PS, ve a ALIMENTACIÓN y selecciona SALIR DEL PERFIL.
+8️⃣ Verifica en tu cuenta personal que las funciones online de algún juego funcionen.
+9️⃣ ¡A disfrutar!
 
 👨‍💻 Datos de la cuenta
 Usa los siguientes datos para iniciar sesión en tu suscripción PS PLUS:
@@ -46,7 +47,7 @@ Código de seguridad: ${codigoSeguridad}
 📌 Notas adicionales:
 - No cierres sesión.
 - No uses la opción de "Invitado".
-- Mantén la cuenta activa; eliminarla quitará los beneficios de PS PLUS.
+- Mantén la cuenta en tu PS4; eliminarla quitará los beneficios de PS PLUS.
 - Garantía de por vida, siempre que no cambie la política de Sony.
 
 🔐 Términos y condiciones:
@@ -61,14 +62,58 @@ Código de seguridad: ${codigoSeguridad}
 📩 ¿Problemas? Contáctanos: @luxurygamesarg
 
 ¡Disfruta tu suscripción! 🎮`;
+        } else if (consola === 'ps5') {
+            mensaje = `🔐 Instrucciones para configurar tu suscripción PS PLUS en PS5:
+1️⃣ En tu PS5, mantén apretado el botón PS y ve a ALIMENTACIÓN.
+2️⃣ Presiona en CAMBIAR USUARIO.
+3️⃣ Ve a la izquierda del todo, crea un nuevo usuario y usa los datos proporcionados para iniciar sesión (NO uses un usuario de invitado).
+4️⃣ Acepta todo lo necesario.
+5️⃣ Ve a Ajustes > USUARIOS Y CUENTAS.
+6️⃣ En "Otro", selecciona COMPARTIR CONSOLA Y JUGAR OFFLINE:
+   - Si está activado, elige NO DESACTIVAR.
+   - Si no, selecciona ACTIVAR.
+   - NO CERRAR SESION
+7️⃣ Mantén presionado el botón PS, ve a ALIMENTACIÓN y selecciona SALIR DEL PERFIL.
+8️⃣ Verifica en tu cuenta personal que las funciones online de algún juego funcionen.
+9️⃣ ¡A disfrutar!
+
+👨‍💻 Datos de la cuenta
+Usa los siguientes datos para iniciar sesión en tu suscripción PS PLUS:
+
+------------------------------------------------------------
+Email: ${email}
+Contraseña: ${password}
+Código de seguridad: ${codigoSeguridad}
+------------------------------------------------------------
+
+📌 Notas adicionales:
+- No cierres sesión.
+- No uses la opción de "Invitado".
+- Mantén la cuenta en tu PS5; eliminarla quitará los beneficios de PS PLUS.
+- Garantía de por vida, siempre que no cambie la política de Sony.
+
+🔐 Términos y condiciones:
+- No cambies email, contraseña ni ID online.
+- No uses esta cuenta en más de una consola.
+- No modifiques detalles ni elimines la verificación en dos pasos.
+- No añadas un teléfono ni uses la cuenta de PS4 en PS5 (o viceversa).
+- Contacta con nosotros antes de cambiar el disco duro, reparar o resetear la consola.
+
+❗ Importante: Incumplir estas reglas anula la garantía y no habrá reembolsos.
+
+📩 ¿Problemas? Contáctanos: @luxurygamesarg
+
+¡Disfruta tu suscripción! 🎮`;
+        }
     } else {
+        // Lógica para juegos (primarias y secundarias) permanece igual
         const tipoCuenta = document.getElementById('tipoCuenta').value;
         if (tipoCuenta === 'primaria') {
             if (consola === 'ps4') {
                 mensaje = `📢 ¡Gracias por tu compra!
 
-🔐 Instrucciones para configurar tu Cuenta Primaria en ${consola.toUpperCase()}:
-1️⃣ En tu ${consola.toUpperCase()}, mantén apretado el botón PS y ve a ALIMENTACIÓN.
+🔐 Instrucciones para configurar tu Cuenta Primaria en PS4:
+1️⃣ En tu PS4, mantén apretado el botón PS y ve a ALIMENTACIÓN.
 2️⃣ Presiona en CAMBIAR USUARIO.
 3️⃣ Ve a la izquierda del todo, crea un nuevo usuario y usa los datos proporcionados para iniciar sesión (NO uses un usuario de invitado).
 4️⃣ Dale a ACEPTAR dos veces seguidas.
@@ -78,12 +123,6 @@ Código de seguridad: ${codigoSeguridad}
 8️⃣ Mantén presionado el botón PS, ve a ALIMENTACIÓN y selecciona SALIR DEL PERFIL.
 9️⃣ Verifica en tu cuenta personal que el juego se siga descargando.
 🔟 ¡A disfrutar!
-
-🔒 Si aparece un candado:
-1️⃣ Ingresa al usuario del juego.
-2️⃣ Ve a Configuración > ADMINISTRACIÓN DE CUENTA > INICIAR SESIÓN > ACTIVAR COMO PS4 PRINCIPAL y actívalo de nuevo.
-3️⃣ Presiona CERRAR SESIÓN.
-4️⃣ Mantén presionado el botón PS > Alimentación > Salir de PS4 e ingresa a tu usuario personal.
 
 👨‍💻 Datos de la cuenta
 Usa los siguientes datos para iniciar sesión:
@@ -102,7 +141,7 @@ Código de seguridad: ${codigoSeguridad}
 📌 Notas adicionales:
 - No cierres sesión completamente, solo usa "Cerrar sesión".
 - No uses "Invitado".
-- Mantén la cuenta activa; eliminarla bloqueará el juego.
+- Mantén la cuenta en tu PS4; eliminarla bloqueará el juego.
 - Garantía de por vida, salvo cambios en la política de Sony.
 
 🔐 Términos y condiciones:
@@ -120,8 +159,8 @@ Código de seguridad: ${codigoSeguridad}
             } else if (consola === 'ps5') {
                 mensaje = `📢 ¡Gracias por tu compra!
 
-🔐 Instrucciones para configurar tu Cuenta Primaria en ${consola.toUpperCase()}:
-1️⃣ En tu ${consola.toUpperCase()}, mantén apretado el botón PS y ve a ALIMENTACIÓN.
+🔐 Instrucciones para configurar tu Cuenta Primaria en PS5:
+1️⃣ En tu PS5, mantén apretado el botón PS y ve a ALIMENTACIÓN.
 2️⃣ Presiona en CAMBIAR USUARIO.
 3️⃣ Ve a la izquierda del todo, crea un nuevo usuario y usa los datos proporcionados para iniciar sesión (NO uses un usuario de invitado).
 4️⃣ Acepta todo lo necesario.
@@ -151,7 +190,7 @@ Código de seguridad: ${codigoSeguridad}
 📌 Notas adicionales:
 - No cierres sesión completamente, solo usa "Cerrar sesión".
 - No uses "Invitado".
-- Mantén la cuenta activa; eliminarla bloqueará el juego.
+- Mantén la cuenta en tu PS5; eliminarla bloqueará el juego.
 - Garantía de por vida, salvo cambios en la política de Sony.
 
 🔐 Términos y condiciones:
