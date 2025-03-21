@@ -28,6 +28,7 @@ label {
     display: block;
     margin: 10px 0 5px;
     font-weight: bold;
+    text-align: left;
 }
 
 input, select {
@@ -36,6 +37,7 @@ input, select {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
 button {
@@ -64,6 +66,11 @@ button:hover {
 #botonCopiar {
     margin-top: 20px;
     width: 100%;
+    background-color: #28a745;
+}
+
+#botonCopiar:disabled {
+    background-color: #6c757d;
 }
 
 #cuentaContainer {
