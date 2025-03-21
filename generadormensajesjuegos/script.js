@@ -36,7 +36,7 @@ function generarMensaje() {
 9️⃣ ¡A disfrutar!
 
 👨‍💻 Datos de la cuenta
-Usa los siguientes datos para iniciar sesión en tu suscripción PS PLUS:
+Usa los siguientes datos para iniciar sesión:
 
 ------------------------------------------------------------
 Email: ${email}
@@ -78,7 +78,7 @@ Código de seguridad: ${codigoSeguridad}
 9️⃣ ¡A disfrutar!
 
 👨‍💻 Datos de la cuenta
-Usa los siguientes datos para iniciar sesión en tu suscripción PS PLUS:
+Usa los siguientes datos para iniciar sesión:
 
 ------------------------------------------------------------
 Email: ${email}
