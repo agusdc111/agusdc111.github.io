@@ -65,3 +65,7 @@ button:hover {
     margin-top: 20px;
     width: 100%;
 }
+
+#cuentaContainer {
+    transition: all 0.3s ease;
+}
