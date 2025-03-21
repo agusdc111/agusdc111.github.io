@@ -1,96 +1,106 @@
+function toggleAccountType() {
+    const tipoProducto = document.getElementById('tipoProducto').value;
+    const cuentaContainer = document.getElementById('cuentaContainer');
+    cuentaContainer.style.display = tipoProducto === 'plus' ? 'none' : 'block';
+}
+
 function generarMensaje() {
-    const tipoCuenta = document.getElementById('tipoCuenta').value;
+    const tipoProducto = document.getElementById('tipoProducto').value;
     const consola = document.getElementById('consola').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     const codigoSeguridad = document.getElementById('codigoSeguridad').value;
+    
+    let tipoCuenta = 'primaria';
+    if (tipoProducto === 'juego') {
+        tipoCuenta = document.getElementById('tipoCuenta').value;
+    }
 
     let mensaje = '';
 
-    if (tipoCuenta === 'primaria') {
-        mensaje = `📢 ¡Gracias por tu compra!
+    if (tipoProducto === 'plus') {
+        mensaje = `📢 ¡Gracias por tu compra de PS PLUS!
 
-🔐 Instrucciones para configurar tu Cuenta Primaria en ${consola.toUpperCase()}:
-1️⃣ En tu ${consola.toUpperCase()}, crea un nuevo usuario y utiliza los datos proporcionados para iniciar sesión. (NO CREAR UN USUARIO DE INVITADO)
-2️⃣ Acepta las políticas de privacidad y configura la cuenta como PRINCIPAL.
-3️⃣ Descarga el juego desde la biblioteca de la cuenta comprada.
-4️⃣ Una vez descargado, sal de la cuenta comprada y cambia al usuario de tu preferencia para jugar.
+🔐 Instrucciones para configurar PS PLUS en ${consola.toUpperCase()}:
+1️⃣ Ingresa a tu ${consola.toUpperCase()} con los datos proporcionados
+2️⃣ Acepta las políticas de privacidad y configura como PRINCIPAL
+3️⃣ Descarga PS PLUS desde la biblioteca
+4️⃣ Activa licencias y cierra sesión para usar tu cuenta personal
 
-👨‍💻 Datos de la cuenta
-Por favor, utiliza los siguientes datos para iniciar sesión en la cuenta de juego digital:
-
-------------------------------------------------------------
+👨‍💻 Datos de la cuenta:
 Email: ${email}
 Contraseña: ${password}
 Código de seguridad: ${codigoSeguridad}
-------------------------------------------------------------
 
-✅ Ventajas de la Cuenta Primaria:
-- Juegas desde tu propia cuenta personal.
-- Funciona tanto en línea como sin conexión.
-- Puedes disfrutar de DLC y contenidos adicionales.
+✅ Ventajas:
+- Acceso completo a PS PLUS
+- Funciona en tu cuenta personal
+- Actualizaciones automáticas
 
-📌 Notas adicionales:
-- No cierres sesión completamente; solo selecciona "Cerrar sesión".
-- No uses la opción de "Invitado".
-- Mantén la cuenta activa; eliminarla bloqueará el juego.
-- Las cuentas tienen garantía de por vida, siempre que no cambie la política de Sony.
+📩 Soporte: @luxurygamesarg
+¡Disfruta de tu PS PLUS! 🎮`;
+    } else {
+        if (tipoCuenta === 'primaria' && consola === 'ps4') {
+            mensaje = `📢 ¡Gracias por tu compra!
 
-🔐 Términos y condiciones:
-- No cambiar el email, contraseña o el ID online.
-- En cuentas Primarias: juega desde tu cuenta personal.
-- No utilices esta cuenta en más de una consola.
-- No cambies detalles de la cuenta ni elimines la verificación en dos pasos.
-- No agregues un teléfono ni uses la cuenta de PS4 en PS5 (o viceversa).
-- Antes de cambiar el disco duro, reparar la consola o resetearla, contáctanos primero.
+⚠️ **MANDAR FOTO DEL JUEGO DESCARGANDO PARA GARANTÍA**  
+Horarios Soporte: L-V 14-20hs  
 
-❗ Importante: Si incumples estas reglas, la garantía se perderá y no habrá reembolsos.
+---
 
-📩 Si tienes algún problema, no dudes en contactarnos. @luxurygamesarg
+### PASOS PARA PS4 (PRIMARIA):
+1. Crear usuario nuevo
+2. Ingresar:
+   Email: ${email}
+   Contraseña: ${password}
+   Código: ${codigoSeguridad}
+3. Biblioteca > Comprados > Descargar
+4. Configuración > Activar como Principal
+5. Cerrar sesión y verificar descarga
 
-¡A disfrutar de tu juego! 🎮`;
-    } else if (tipoCuenta === 'secundaria') {
-        mensaje = `📢 ¡Gracias por tu compra!
+📌 Términos:
+- No modificar datos de cuenta
+- Solo 1 consola activa
 
-🔐 Instrucciones para configurar tu Cuenta Secundaria en ${consola.toUpperCase()}:
-1️⃣ En tu ${consola.toUpperCase()}, crea un nuevo usuario y utiliza los datos proporcionados para iniciar sesión. (NO CREAR UN USUARIO DE INVITADO)
-2️⃣ Acepta las políticas de privacidad y NO ACTIVES la cuenta como principal.
-3️⃣ Descarga el juego desde la biblioteca del usuario nuevo creado.
-4️⃣ Cada vez que quieras jugar, inicia sesión en el usuario que creaste con esta cuenta.
+📩 Soporte: @luxurygamesarg 🎮`;
+        }
+        else if (tipoCuenta === 'primaria' && consola === 'ps5') {
+            mensaje = `📢 ¡Gracias por tu compra!
 
-👨‍💻 Datos de la cuenta
-Por favor, utiliza los siguientes datos para iniciar sesión en la cuenta de juego digital:
+### INSTRUCTIVO PS5 (PRIMARIA):
+1. Crear usuario (NO INVITADO)
+2. Datos:
+   Email: ${email}
+   Contraseña: ${password}
+   Código: ${codigoSeguridad}
+3. Biblioteca > Descargar juego
+4. Ajustes > Compartir consola > ACTIVAR
+5. Cerrar sesión y disfrutar
 
-------------------------------------------------------------
-Email: ${email}
-Contraseña: ${password}
-Código de seguridad: ${codigoSeguridad}
-------------------------------------------------------------
+🔒 Términos:
+- No eliminar usuario
+- No modificar datos
+- No revender
 
-✅ Ventajas de la Cuenta Secundaria:
-- Juegas desde tu propia cuenta personal.
-- Funciona tanto en línea como sin conexión.
-- Puedes disfrutar de DLC y contenidos adicionales.
+📩 Soporte: @luxurygamesarg 🎮`;
+        }
+        else if (tipoCuenta === 'secundaria') {
+            mensaje = `📢 ¡Gracias por tu compra!
 
-📌 Notas adicionales:
-- No cierres sesión completamente; solo selecciona "Cerrar sesión".
-- No uses la opción de "Invitado".
-- Mantén la cuenta activa; eliminarla bloqueará el juego.
-- Las cuentas tienen garantía de por vida, siempre que no cambie la política de Sony.
+🔐 Instrucciones Cuenta Secundaria (${consola.toUpperCase()}):
+1. Nuevo usuario con datos:
+   Email: ${email}
+   Contraseña: ${password}
+   Código: ${codigoSeguridad}
+2. Descargar desde biblioteca
+3. Jugar siempre desde este usuario
 
-🔐 Términos y condiciones:
-- No cambiar el email, contraseña o el ID online.
-- En cuentas Secundarias: juega exclusivamente desde la cuenta proporcionada.
-- No utilices esta cuenta en más de una consola.
-- No cambies detalles de la cuenta ni elimines la verificación en dos pasos.
-- No agregues un teléfono ni uses la cuenta de PS4 en PS5 (o viceversa).
-- Antes de cambiar el disco duro, reparar la consola o resetearla, contáctanos primero.
+⚠️ Restricciones:
+- No activar como principal
+- No compartir cuenta
 
-❗ Importante: Si incumples estas reglas, la garantía se perderá y no habrá reembolsos.
-
-📩 Si tienes algún problema, contáctanos de inmediato. @luxurygamesarg
-
-¡Que disfrutes tu juego! 🎮`;
+📩 Soporte: @luxurygamesarg 🎮`;
+        }
     }
 
     document.getElementById('mensajeGenerado').textContent = mensaje;
@@ -103,3 +113,6 @@ function copiarMensaje() {
         alert('Mensaje copiado al portapapeles.');
     });
 }
+
+// Inicializar visibilidad al cargar
+window.onload = toggleAccountType;
