@@ -10,18 +10,30 @@
     <div class="container">
         <h1>Generador de Instrucciones para Cuentas de Juegos</h1>
         <form id="formulario">
-            <label for="tipoCuenta">Selecciona el tipo de cuenta:</label>
-            <select id="tipoCuenta">
-                <option value="primaria">Cuenta Primaria</option>
-                <option value="secundaria">Cuenta Secundaria</option>
+            <!-- Selector de tipo de producto -->
+            <label for="tipoProducto">Selecciona el tipo de producto:</label>
+            <select id="tipoProducto" onchange="toggleAccountType()">
+                <option value="juego">JUEGO</option>
+                <option value="plus">PS PLUS</option>
             </select>
 
+            <!-- Contenedor para tipo de cuenta (solo visible para JUEGO) -->
+            <div id="cuentaContainer">
+                <label for="tipoCuenta">Selecciona el tipo de cuenta:</label>
+                <select id="tipoCuenta">
+                    <option value="primaria">Cuenta Primaria</option>
+                    <option value="secundaria">Cuenta Secundaria</option>
+                </select>
+            </div>
+
+            <!-- Selector de consola -->
             <label for="consola">Selecciona la consola:</label>
             <select id="consola">
                 <option value="ps4">PS4</option>
                 <option value="ps5">PS5</option>
             </select>
 
+            <!-- Campos de datos -->
             <label for="email">Email:</label>
             <input type="text" id="email" placeholder="Ingresa el email">
 
@@ -34,10 +46,8 @@
             <button type="button" onclick="generarMensaje()">Generar Mensaje</button>
         </form>
 
-        <div id="mensajeGenerado" class="mensaje">
-            <!-- Aquí se mostrará el mensaje generado -->
-        </div>
-
+        <!-- Área de mensaje generado -->
+        <div id="mensajeGenerado" class="mensaje"></div>
         <button id="botonCopiar" onclick="copiarMensaje()" disabled>Copiar Mensaje</button>
     </div>
 
