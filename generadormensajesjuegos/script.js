@@ -30,7 +30,7 @@ function generarMensaje() {
 3️⃣ Ve a la izquierda del todo, crea un nuevo usuario y usa los datos proporcionados para iniciar sesión (NO uses un usuario de invitado).
 4️⃣ Dale a ACEPTAR dos veces seguidas.
 5️⃣ Ve a Configuración > ADMINISTRACIÓN DE CUENTAS.
-6️⃣ Presiona ACTIVAR COMO PRINCIPAL (NO CIERRES SESIÓN).
+6️⃣ Presiona ACTIVAR COMO PS4 PRINCIPAL (NO CIERRES SESIÓN).
 7️⃣ Mantén presionado el botón PS, ve a ALIMENTACIÓN y selecciona SALIR DEL PERFIL.
 8️⃣ Verifica en tu cuenta personal que las funciones online de algún juego funcionen.
 9️⃣ ¡A disfrutar!
@@ -119,7 +119,7 @@ Código de seguridad: ${codigoSeguridad}
 4️⃣ Dale a ACEPTAR dos veces seguidas.
 5️⃣ Dirígete a Biblioteca (al fondo a la derecha), ve a Comprados y descarga el juego.
 6️⃣ Ve a Configuración > ADMINISTRACIÓN DE CUENTAS.
-7️⃣ Presiona ACTIVAR COMO PRINCIPAL, luego RESTAURAR LICENCIAS y después CERRAR SESIÓN.
+7️⃣ Presiona ACTIVAR COMO PS4 PRINCIPAL, luego presionar RESTAURAR LICENCIAS y después presionar CERRAR SESIÓN.
 8️⃣ Mantén presionado el botón PS, ve a ALIMENTACIÓN y selecciona SALIR DEL PERFIL.
 9️⃣ Verifica en tu cuenta personal que el juego se siga descargando.
 🔟 ¡A disfrutar!
